@@ -17,6 +17,7 @@
 		156650662BAC86E000A56EB4 /* readme_v.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156650652BAC86E000A56EB4 /* readme_v.swift */; };
 		156650682BAC871400A56EB4 /* readme_m.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156650672BAC871400A56EB4 /* readme_m.swift */; };
 		995894A72BB865F500AE4CEB /* SnackBar in Frameworks */ = {isa = PBXBuildFile; productRef = 995894A62BB865F500AE4CEB /* SnackBar */; };
+		995894AC2BB8690700AE4CEB /* LiveData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995894AB2BB8690700AE4CEB /* LiveData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		156650632BAC86A600A56EB4 /* readme_vm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = readme_vm.swift; sourceTree = "<group>"; };
 		156650652BAC86E000A56EB4 /* readme_v.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = readme_v.swift; sourceTree = "<group>"; };
 		156650672BAC871400A56EB4 /* readme_m.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = readme_m.swift; sourceTree = "<group>"; };
+		995894AB2BB8690700AE4CEB /* LiveData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +50,7 @@
 		156650362BAC635A00A56EB4 = {
 			isa = PBXGroup;
 			children = (
+				995894AA2BB8683B00AE4CEB /* architecture */,
 				156650582BAC6C3A00A56EB4 /* viewmodel */,
 				156650572BAC6C2800A56EB4 /* view */,
 				156650562BAC6C1500A56EB4 /* model */,
@@ -100,6 +103,14 @@
 				156650632BAC86A600A56EB4 /* readme_vm.swift */,
 			);
 			path = viewmodel;
+			sourceTree = "<group>";
+		};
+		995894AA2BB8683B00AE4CEB /* architecture */ = {
+			isa = PBXGroup;
+			children = (
+				995894AB2BB8690700AE4CEB /* LiveData.swift */,
+			);
+			path = architecture;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,6 +190,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				995894AC2BB8690700AE4CEB /* LiveData.swift in Sources */,
 				156650662BAC86E000A56EB4 /* readme_v.swift in Sources */,
 				156650682BAC871400A56EB4 /* readme_m.swift in Sources */,
 				1566505C2BAC6CD300A56EB4 /* MainViewController.swift in Sources */,
