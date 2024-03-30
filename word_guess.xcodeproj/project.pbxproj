@@ -16,6 +16,7 @@
 		156650642BAC86A600A56EB4 /* readme_vm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156650632BAC86A600A56EB4 /* readme_vm.swift */; };
 		156650662BAC86E000A56EB4 /* readme_v.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156650652BAC86E000A56EB4 /* readme_v.swift */; };
 		156650682BAC871400A56EB4 /* readme_m.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156650672BAC871400A56EB4 /* readme_m.swift */; };
+		995894A72BB865F500AE4CEB /* SnackBar in Frameworks */ = {isa = PBXBuildFile; productRef = 995894A62BB865F500AE4CEB /* SnackBar */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				995894A72BB865F500AE4CEB /* SnackBar in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,6 +118,9 @@
 			dependencies = (
 			);
 			name = word_guess;
+			packageProductDependencies = (
+				995894A62BB865F500AE4CEB /* SnackBar */,
+			);
 			productName = word_guess;
 			productReference = 1566503F2BAC635A00A56EB4 /* word_guess.app */;
 			productType = "com.apple.product-type.application";
@@ -144,6 +149,9 @@
 				Base,
 			);
 			mainGroup = 156650362BAC635A00A56EB4;
+			packageReferences = (
+				995894A52BB865F400AE4CEB /* XCRemoteSwiftPackageReference "SnackBar" */,
+			);
 			productRefGroup = 156650402BAC635A00A56EB4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -326,6 +334,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -356,6 +365,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -395,6 +405,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		995894A52BB865F400AE4CEB /* XCRemoteSwiftPackageReference "SnackBar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ahmedAlmasri/SnackBar.swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		995894A62BB865F500AE4CEB /* SnackBar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 995894A52BB865F400AE4CEB /* XCRemoteSwiftPackageReference "SnackBar" */;
+			productName = SnackBar;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 156650372BAC635A00A56EB4 /* Project object */;
 }

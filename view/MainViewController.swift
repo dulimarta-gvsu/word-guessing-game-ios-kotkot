@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnackBar
 
 class MainViewController: UIViewController {
     
