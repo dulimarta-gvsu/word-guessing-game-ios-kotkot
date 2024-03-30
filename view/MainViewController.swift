@@ -10,23 +10,45 @@ import SnackBar
 
 class MainViewController: UIViewController {
     
-    var correctCount: UILabel!
+    var correctScore: UILabel!
+    var incorrectScore: UILabel!
     var checkButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Change the background color to your preference
-        self.view.backgroundColor = .lightGray
-        correctCount = view.viewWithTag(21) as? UILabel
-        checkButton = view.viewWithTag(51) as? UIButton
+        self.view.backgroundColor = .orange
+        /*
+         Declare widgets
+         */
+        // correctCount Text
+        correctScore = view.viewWithTag(10) as? UILabel
+                
+        // incorrect Score text
+        incorrectScore = view.viewWithTag(11) as? UILabel
+        
+        // Scrambled Word Text
+        var scrambledWordText = view.viewWithTag(20) as? UILabel
+        
+        // userInput Text
+        var userInputTextField = view.viewWithTag(30) as? UITextField
+        
+        // check user input button
+        checkButton = view.viewWithTag(40) as? UIButton
         
         checkButton.addTarget(self, action: #selector(doSome), for: UIControl.Event.touchUpInside)
 
+        // settings button
+        var settingsButton = view.viewWithTag(41) as? UIButton
+        
+        /*
+         Need to create function to make settings button work and the associated variables for data transfer for settings screen to work properly.
+         */
         // Do any additional setup after loading the view.
     }
     
     @objc func doSome(){
-        correctCount.text = "You got it"
+        correctScore.text = "You got it"
     }
 
 
