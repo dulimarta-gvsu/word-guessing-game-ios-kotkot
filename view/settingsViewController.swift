@@ -12,6 +12,9 @@ class settingsViewController: UIViewController {
     let vm = settingsViewModel()
     var passedData: settingsArg?
     var functionToUpdateMainGamesData: ((settingsArg) -> Void)?
+    var minimumWordSizeTB: UITextField!
+    var maximumWordSizeTB: UITextField!
+
     
     init(arg: settingsArg){
         super.init(nibName: nil, bundle: nil)
@@ -29,27 +32,46 @@ class settingsViewController: UIViewController {
         self.view.backgroundColor = .cyan
         
         // setup minimum word size tb
-        let minimumWordSizeTB = view.viewWithTag(20) as? UITextField
+        minimumWordSizeTB = view.viewWithTag(20) as? UITextField
         minimumWordSizeTB?.text = "\(String(describing: self.passedData?.minLength))"
         
         // setup maximum word size tb
-        let maximumWordSizeTB = view.viewWithTag(40) as? UITextField
+        maximumWordSizeTB = view.viewWithTag(40) as? UITextField
         maximumWordSizeTB?.text = "\(String(describing: self.passedData?.maxLength))"
         
         // setup observers
-        vm.snackMessage.observe {_ in 
-            SnackBar.make(in: self.view,
-                          message: self.vm.snackMessage.value ?? "ensure you entered word sizes from 3 - 7",
-                          duration: .lengthLong)
-            .show()
+        vm.snackMessage.observe {_ in
+            if self.vm.snackMessage.value?.count != 0{
+                SnackBar.make(in: self.view,
+                              message: self.vm.snackMessage.value ?? "ensure you entered word sizes from 3 - 7",
+                              duration: .lengthLong)
+                .show()
+            }
+        }
+
+        // update the textboxes to initially show the current passed in
+        // min and max word length
+        if let minLengthValueSize = self.passedData?.maxLength{
+            self.minimumWordSizeTB.text = String(minLengthValueSize)
+
+        }
+        if let maxLengthValueSize = self.passedData?.maxLength{
+            self.maximumWordSizeTB.text = String(maxLengthValueSize)
         }
 
         
         // setup return to game
-        let returnToGame = view.viewWithTag(50)
+        let returnToGameButton = view.viewWithTag(50)
         
         
-        
+//        if let text = textField.text {
+//            // text is a non-optional string here
+//            print(text)
+//        } else {
+//            // Handle the case where the text field is empty
+//            print("Text field is empty")
+//        }
+
         
         
 
