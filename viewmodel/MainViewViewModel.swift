@@ -22,12 +22,12 @@ class MainViewViewModel{
                                    "ABOUT", "ALERT",
                                    "ARGUE", "ARRAY",
                                    "CHAIR", "CLOSE",
-                                                "CROWD", "CROWN",
-                                                "ACCEPT", "CASUAL",
-                                                "AROUND", "COUPLE",
-                                                "BATTLE", "DEFEND",
-                                                "COFFEE", "DESIRE",
-                                                "EATING"
+                                   "CROWD", "CROWN",
+                                   "ACCEPT", "CASUAL",
+                                   "AROUND", "COUPLE",
+                                   "BATTLE", "DEFEND",
+                                   "COFFEE", "DESIRE",
+                                   "EATING"
     ]
     @Published var correctCounter = 0
     @Published var incorrectCounter = 0

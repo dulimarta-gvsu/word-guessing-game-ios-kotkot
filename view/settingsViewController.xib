@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="settingsViewController" customModule="word_guess" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" tag="10" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What's the minimum word size you want?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eEI-iH-0Yy">
+                    <rect key="frame" x="8.3333333333333428" y="96" width="376.66666666666663" height="25.333333333333329"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" tag="20" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="3" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kt0-U5-omB">
+                    <rect key="frame" x="171.66666666666666" y="150.33333333333334" width="50" height="51.666666666666657"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What's the maximim word size you want?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L3J-ir-CUH">
+                    <rect key="frame" x="9" y="271.33333333333331" width="375" height="25.333333333333314"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="6" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QsA-Jk-2XH">
+                    <rect key="frame" x="171.66666666666666" y="334.66666666666669" width="50" height="51.666666666666686"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="SHe-h6-knW">
+                    <rect key="frame" x="24" y="512" width="344.66666666666663" height="34.333333333333258"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ark-47-3ln">
+                            <rect key="frame" x="0.0" y="0.0" width="147.33333333333334" height="34.333333333333336"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="filled" title="Return to game"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fuM-SA-6fP">
+                            <rect key="frame" x="197.33333333333331" y="0.0" width="147.33333333333331" height="34.333333333333336"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="filled" title="Delete account?"/>
+                        </button>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="SHe-h6-knW" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="QNu-Tu-mnO"/>
+                <constraint firstItem="QsA-Jk-2XH" firstAttribute="top" secondItem="L3J-ir-CUH" secondAttribute="bottom" constant="38" id="UEV-wV-H1m"/>
+                <constraint firstItem="SHe-h6-knW" firstAttribute="top" secondItem="QsA-Jk-2XH" secondAttribute="bottom" constant="125.66666666666663" id="Ufs-aC-TIR"/>
+                <constraint firstItem="eEI-iH-0Yy" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="37" id="dAE-57-x8V"/>
+                <constraint firstItem="L3J-ir-CUH" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="dhI-qk-KY5"/>
+                <constraint firstItem="Kt0-U5-omB" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="ghk-Tp-XaB"/>
+                <constraint firstItem="Kt0-U5-omB" firstAttribute="top" secondItem="eEI-iH-0Yy" secondAttribute="bottom" constant="29" id="sKa-3S-8su"/>
+                <constraint firstItem="L3J-ir-CUH" firstAttribute="top" secondItem="Kt0-U5-omB" secondAttribute="bottom" constant="69.333333333333343" id="tcO-YS-qw4"/>
+                <constraint firstItem="eEI-iH-0Yy" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="vIX-mA-xfQ"/>
+                <constraint firstItem="QsA-Jk-2XH" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="xmM-ei-Zrj"/>
+            </constraints>
+            <point key="canvasLocation" x="139.69465648854961" y="19.718309859154932"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

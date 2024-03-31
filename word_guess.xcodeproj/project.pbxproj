@@ -19,6 +19,8 @@
 		995894A72BB865F500AE4CEB /* SnackBar in Frameworks */ = {isa = PBXBuildFile; productRef = 995894A62BB865F500AE4CEB /* SnackBar */; };
 		995894AC2BB8690700AE4CEB /* LiveData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995894AB2BB8690700AE4CEB /* LiveData.swift */; };
 		995894AE2BB86A5000AE4CEB /* MainViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995894AD2BB86A5000AE4CEB /* MainViewViewModel.swift */; };
+		995894B12BB9CEC200AE4CEB /* settingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995894AF2BB9CEC200AE4CEB /* settingsViewController.swift */; };
+		995894B22BB9CEC200AE4CEB /* settingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 995894B02BB9CEC200AE4CEB /* settingsViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,8 @@
 		156650672BAC871400A56EB4 /* readme_m.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = readme_m.swift; sourceTree = "<group>"; };
 		995894AB2BB8690700AE4CEB /* LiveData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveData.swift; sourceTree = "<group>"; };
 		995894AD2BB86A5000AE4CEB /* MainViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewViewModel.swift; sourceTree = "<group>"; };
+		995894AF2BB9CEC200AE4CEB /* settingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingsViewController.swift; sourceTree = "<group>"; };
+		995894B02BB9CEC200AE4CEB /* settingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = settingsViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +99,8 @@
 				156650592BAC6CD300A56EB4 /* MainViewController.swift */,
 				1566505A2BAC6CD300A56EB4 /* MainViewController.xib */,
 				156650652BAC86E000A56EB4 /* readme_v.swift */,
+				995894AF2BB9CEC200AE4CEB /* settingsViewController.swift */,
+				995894B02BB9CEC200AE4CEB /* settingsViewController.xib */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -183,6 +189,7 @@
 				1566504C2BAC635D00A56EB4 /* Assets.xcassets in Resources */,
 				1566505B2BAC6CD300A56EB4 /* MainViewController.xib in Resources */,
 				1566504F2BAC635D00A56EB4 /* Base in Resources */,
+				995894B22BB9CEC200AE4CEB /* settingsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,6 +202,7 @@
 			files = (
 				995894AC2BB8690700AE4CEB /* LiveData.swift in Sources */,
 				156650662BAC86E000A56EB4 /* readme_v.swift in Sources */,
+				995894B12BB9CEC200AE4CEB /* settingsViewController.swift in Sources */,
 				156650682BAC871400A56EB4 /* readme_m.swift in Sources */,
 				1566505C2BAC6CD300A56EB4 /* MainViewController.swift in Sources */,
 				156650642BAC86A600A56EB4 /* readme_vm.swift in Sources */,
