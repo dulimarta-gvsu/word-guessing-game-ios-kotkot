@@ -8,7 +8,7 @@
 import Foundation
 
 class MainViewViewModel{
-    var allWords: Array<String> = ["apples",
+    var allWords = ["apples",
                                    "bananas",
                                    "oranges", "row",
                                    "bow", "sew", "rue",
@@ -29,4 +29,25 @@ class MainViewViewModel{
                                                 "coffee", "desire",
                                                 "eating"
     ]
+    @Published var correctCounter = 0
+    @Published var incorrectCounter = 0
+    @Published var normalWord = ""
+    @Published var clearWord = ""
+    @Published var first = 0
+    @Published var tries = 0
+    @Published var shuffledWord: Array<Character>
+    @Published var guessNow = ""
+    @Published var noRepeat = ""
+    @Published var lower = 0
+    @Published var higher = 0
+    @Published var errorMessage = ""
+    
+    func addCor() {
+        correctCounter += 1
+    }
+    
+    func addInc() {
+        incorrectCounter += 1
+    }
+    
 }
