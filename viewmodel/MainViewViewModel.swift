@@ -42,6 +42,10 @@ class MainViewViewModel{
     @Published var higher = 7
     @Published var errorMessage = ""
     
+    func nowClearWord() {
+        clearWord = ""
+    }
+    
     func addCor() {
         correctCounter += 1
     }
@@ -70,6 +74,7 @@ class MainViewViewModel{
         if (guess.uppercased() == normalWord){
             addCor()
             pickWord()
+            nowClearWord()
             tries = 0
             errorMessage = "Good Job! Try this next word"
         } else if (guess.uppercased() != normalWord && tries != 2) {
@@ -78,6 +83,7 @@ class MainViewViewModel{
         } else if (guess.uppercased() != normalWord && tries == 2) {
             addInc()
             pickWord()
+            nowClearWord()
             errorMessage = "Too many tries. Time for a new word"
             tries = 0
         }

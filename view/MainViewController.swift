@@ -46,7 +46,7 @@ class MainViewController: UIViewController {
         // check user input button
         checkButton = view.viewWithTag(40) as? UIButton
         
-        checkButton.addTarget(self, action: #selector(doSome), for: UIControl.Event.touchUpInside)
+        checkButton.addTarget(self, action: #selector(checkMyAnswer), for: UIControl.Event.touchUpInside)
 
         // settings button
         var settingsButton = view.viewWithTag(41) as? UIButton
@@ -74,10 +74,17 @@ class MainViewController: UIViewController {
                 self.scrambledWordText.text = val}
             .store(in: &pool)
         
+        VM.$clearWord
+            .receive(on: DispatchQueue.main)
+            .sink { val in
+                self.userInputTextField.text = val}
+            .store(in: &pool)
+        
     }
     
-    @objc func doSome(){
+    @objc func checkMyAnswer(){
         VM.checkAnswer(guess: userInputTextField.text!)
+        SnackBar.make(in: self.view, message: VM.errorMessage, duration: .lengthShort).show()
     }
 
 
