@@ -50,6 +50,7 @@ class MainViewController: UIViewController {
 
         // settings button
         var settingsButton = view.viewWithTag(41) as? UIButton
+        settingsButton?.addTarget(self, action: #selector(toSettings), for: UIControl.Event.touchUpInside)
         
         /*
          Need to create function to make settings button work and the associated variables for data transfer for settings screen to work properly.
@@ -90,16 +91,32 @@ class MainViewController: UIViewController {
     
     // setup function to be called when someone presses the settings
     // button.
-    func toSettings(){
+    @objc func toSettings(){
         // initialize the struct we will pass to settings ViewControl
         // (Activity)
         let dataToPass = settingsArg(minLength: VM.lower, maxLength: VM.higher)
         
+        let settingsIntantiation = settingsViewController(arg: dataToPass)
+        // setup the receiving function to call before transitioning to
+        // settings screen
+        settingsIntantiation.functionToUpdateMainGamesData = fromSettings
+        // now launch the activity (push the view controller onto the
+        // view controller stack.
+        self.navigationController?.pushViewController(settingsIntantiation, animated: true)
     }
     
     func fromSettings(passedData: settingsArg){
-        
+        // if the user changed the minimum word size variable value or maximum word size value then we should pick a new word to reflect that
+        if (self.VM.lower != passedData.minLength) || (self.VM.higher != passedData.maxLength){
+            self.VM.lower = passedData.minLength
+            self.VM.higher = passedData.maxLength
+            self.VM.pickWord()
+            self.VM.nowClearWord()
+        }
     }
+        // else if neither bound was changed than the previous used word
+        // should still be valid and work.
+        
     
     
 

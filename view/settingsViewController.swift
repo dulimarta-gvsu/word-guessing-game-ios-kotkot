@@ -11,6 +11,7 @@ import SnackBar
 class settingsViewController: UIViewController {
     let vm = settingsViewModel()
     var passedData: settingsArg?
+    var functionToUpdateMainGamesData: ((settingsArg) -> Void)?
     
     init(arg: settingsArg){
         super.init(nibName: nil, bundle: nil)
