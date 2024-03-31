@@ -48,3 +48,5 @@ class LiveData<T> {
         obs(self._value)
     }
 }
+
+var ex = LiveData("")

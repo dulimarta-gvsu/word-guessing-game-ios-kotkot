@@ -56,6 +56,7 @@ class MainViewController: UIViewController {
          */
         // Do any additional setup after loading the view.
         
+        
         VM.$correctCounter
             .receive(on: DispatchQueue.main)
             .sink { val in
@@ -86,6 +87,21 @@ class MainViewController: UIViewController {
         VM.checkAnswer(guess: userInputTextField.text!)
         SnackBar.make(in: self.view, message: VM.errorMessage, duration: .lengthShort).show()
     }
+    
+    // setup function to be called when someone presses the settings
+    // button.
+    func toSettings(){
+        // initialize the struct we will pass to settings ViewControl
+        // (Activity)
+        let dataToPass = settingsArg(minLength: VM.lower, maxLength: VM.higher)
+        
+    }
+    
+    func fromSettings(passedData: settingsArg){
+        
+    }
+    
+    
 
 
     /*
