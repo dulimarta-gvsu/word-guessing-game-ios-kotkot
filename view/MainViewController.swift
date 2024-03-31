@@ -13,6 +13,8 @@ class MainViewController: UIViewController {
     var correctScore: UILabel!
     var incorrectScore: UILabel!
     var checkButton: UIButton!
+    
+    let VM = MainViewViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
