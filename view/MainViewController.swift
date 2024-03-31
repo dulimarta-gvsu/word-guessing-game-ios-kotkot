@@ -7,16 +7,24 @@
 
 import UIKit
 import SnackBar
+import Combine
 
 class MainViewController: UIViewController {
     
     var correctScore: UILabel!
     var incorrectScore: UILabel!
     var checkButton: UIButton!
+    var scrambledWordText: UILabel!
+    var userInputTextField: UITextField!
     
     let VM = MainViewViewModel()
+    var pool: Set<AnyCancellable> = []
 
     override func viewDidLoad() {
+        if (VM.first == 0) {
+            VM.pickWord()
+            VM.first = 1
+        }
         super.viewDidLoad()
         // Change the background color to your preference
         self.view.backgroundColor = .orange
@@ -30,10 +38,10 @@ class MainViewController: UIViewController {
         incorrectScore = view.viewWithTag(11) as? UILabel
         
         // Scrambled Word Text
-        var scrambledWordText = view.viewWithTag(20) as? UILabel
+        scrambledWordText = view.viewWithTag(20) as? UILabel
         
         // userInput Text
-        var userInputTextField = view.viewWithTag(30) as? UITextField
+        userInputTextField = view.viewWithTag(30) as? UITextField
         
         // check user input button
         checkButton = view.viewWithTag(40) as? UIButton
@@ -47,10 +55,29 @@ class MainViewController: UIViewController {
          Need to create function to make settings button work and the associated variables for data transfer for settings screen to work properly.
          */
         // Do any additional setup after loading the view.
+        
+        VM.$correctCounter
+            .receive(on: DispatchQueue.main)
+            .sink { val in
+                self.correctScore.text = "Correct: \(val)"}
+            .store(in: &pool)
+        
+        VM.$incorrectCounter
+            .receive(on: DispatchQueue.main)
+            .sink { val in
+                self.incorrectScore.text = "Inorrect: \(val)"}
+            .store(in: &pool)
+        
+        VM.$guessNow
+            .receive(on: DispatchQueue.main)
+            .sink { val in
+                self.scrambledWordText.text = val}
+            .store(in: &pool)
+        
     }
     
     @objc func doSome(){
-        correctScore.text = "You got it"
+        VM.checkAnswer(guess: userInputTextField.text!)
     }
 
 

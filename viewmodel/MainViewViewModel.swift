@@ -8,26 +8,26 @@
 import Foundation
 
 class MainViewViewModel{
-    var allWords = ["apples",
-                                   "bananas",
-                                   "oranges", "row",
-                                   "bow", "sew", "rue",
-                                   "due", "eat",
-                                   "beat", "lead",
-                                   "flew", "draw",
-                                   "bawl", "fall",
-                                   "crap", "lack",
-                                   "warn","darn",
-                                   "highs", "diets",
-                                   "about", "alert",
-                                   "argue", "array",
-                                   "chair", "close",
-                                                "crowd", "crown",
-                                                "accept", "casual",
-                                                "around", "couple",
-                                                "battle", "defend",
-                                                "coffee", "desire",
-                                                "eating"
+    var allWords = ["APPLES",
+                                   "BANANAS",
+                                   "ORANGES", "ROW",
+                                   "BOW", "SEW", "RUE",
+                                   "DUE", "EAT",
+                                   "BEAT", "LEAD",
+                                   "FLEW", "DRAW",
+                                   "BAWL", "FALL",
+                                   "CRAP", "LACK",
+                                   "WARN","DARN",
+                                   "HIGHS", "DIETS",
+                                   "ABOUT", "ALERT",
+                                   "ARGUE", "ARRAY",
+                                   "CHAIR", "CLOSE",
+                                                "CROWD", "CROWN",
+                                                "ACCEPT", "CASUAL",
+                                                "AROUND", "COUPLE",
+                                                "BATTLE", "DEFEND",
+                                                "COFFEE", "DESIRE",
+                                                "EATING"
     ]
     @Published var correctCounter = 0
     @Published var incorrectCounter = 0
@@ -79,6 +79,7 @@ class MainViewViewModel{
             addInc()
             pickWord()
             errorMessage = "Too many tries. Time for a new word"
+            tries = 0
         }
     }
     
