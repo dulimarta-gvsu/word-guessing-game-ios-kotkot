@@ -63,6 +63,17 @@ class settingsViewController: UIViewController {
         // setup return to game
         let returnToGameButton = view.viewWithTag(50)
         
+        // create return to game function
+        func returnToGame(){
+            if var minLengthValueSize = self.minimumWordSizeTB.text{
+                var intMinLengthValueSize:Int? = Int(minLengthValueSize)
+                
+                if var maxLengthValueSize = self.maximumWordSizeTB.text{
+                    var intMaxLengthValueSize: Int? = Int(maxLengthValueSize)
+                    
+                    let toGameData = settingsArg(minLength: intMinLengthValueSize!, maxLength: intMaxLengthValueSize!)
+                }
+            }
         
 //        if let text = textField.text {
 //            // text is a non-optional string here
