@@ -49,7 +49,7 @@ class MainViewController: UIViewController {
         checkButton.addTarget(self, action: #selector(checkMyAnswer), for: UIControl.Event.touchUpInside)
 
         // settings button
-        var settingsButton = view.viewWithTag(41) as? UIButton
+        let settingsButton = view.viewWithTag(41) as? UIButton
         settingsButton?.addTarget(self, action: #selector(toSettings), for: UIControl.Event.touchUpInside)
         
         /*

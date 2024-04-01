@@ -14,7 +14,9 @@ class settingsViewController: UIViewController {
     var functionToUpdateMainGamesData: ((settingsArg) -> Void)?
     var minimumWordSizeTB: UITextField!
     var maximumWordSizeTB: UITextField!
-
+    var returnToGameButton: UIButton!
+    
+    
     
     init(arg: settingsArg){
         super.init(nibName: nil, bundle: nil)
@@ -48,57 +50,73 @@ class settingsViewController: UIViewController {
                 .show()
             }
         }
-
+        
         // update the textboxes to initially show the current passed in
         // min and max word length
         if let minLengthValueSize = self.passedData?.minLength{
             self.minimumWordSizeTB.text = String(minLengthValueSize)
-
+            
         }
         if let maxLengthValueSize = self.passedData?.maxLength{
             self.maximumWordSizeTB.text = String(maxLengthValueSize)
         }
-
         
         // setup return to game
-        let returnToGameButton = view.viewWithTag(50)
-        
+        returnToGameButton = view.viewWithTag(50) as? UIButton
+        // allow the return to game button to have functionality and work.
+        returnToGameButton?.addTarget(self, action: #selector(returnToGame), for: UIControl.Event.touchUpInside)
+        //        settingsButton?.addTarget(self, action: #selector(toSettings), for: UIControl.Event.touchUpInside)
+    }
         // create return to game function
-        func returnToGame(){
+    @objc func returnToGame(){
+            // get the values entered in the 2 textboxes
             if var minLengthValueSize = self.minimumWordSizeTB.text{
-                var intMinLengthValueSize:Int? = Int(minLengthValueSize)
-                
-                if var maxLengthValueSize = self.maximumWordSizeTB.text{
-                    var intMaxLengthValueSize: Int? = Int(maxLengthValueSize)
-                    
-                    let toGameData = settingsArg(minLength: intMinLengthValueSize!, maxLength: intMaxLengthValueSize!)
+                // make sure they didn't leave the textboxes empty
+                if minLengthValueSize.count != 0{
+                    var intMinLengthValueSize:Int? = Int(minLengthValueSize)
+                    // get value entered in second text box.
+                    if var maxLengthValueSize = self.maximumWordSizeTB.text{
+                        // make sure they didn't leave the textbox empty
+                        if maxLengthValueSize.count != 0{
+                            var intMaxLengthValueSize: Int? = Int(maxLengthValueSize)
+                            
+                            // create the struct for the main Game view controllers function.
+                            let toGameData = settingsArg(minLength: intMinLengthValueSize!, maxLength: intMaxLengthValueSize!)
+                            self.functionToUpdateMainGamesData? (toGameData)
+                            self.navigationController?.popViewController(animated: true)
+                            
+                        }
+                    }
+                }
+                else{
+                    vm.snackMessage.value = "Cannot leave either length value empty"
                 }
             }
         }
         
-//        if let text = textField.text {
-//            // text is a non-optional string here
-//            print(text)
-//        } else {
-//            // Handle the case where the text field is empty
-//            print("Text field is empty")
-//        }
-
+        //        if let text = textField.text {
+        //            // text is a non-optional string here
+        //            print(text)
+        //        } else {
+        //            // Handle the case where the text field is empty
+        //            print("Text field is empty")
+        //        }
         
         
-
+        
+        
         // Do any additional setup after loading the view.
     }
-
-
+    
+    
     /*
-    // MARK: - Navigation
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-}
