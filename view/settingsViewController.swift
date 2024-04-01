@@ -73,18 +73,21 @@ class settingsViewController: UIViewController {
             if var minLengthValueSize = self.minimumWordSizeTB.text{
                 // make sure they didn't leave the textboxes empty
                 if minLengthValueSize.count != 0{
-                    var intMinLengthValueSize:Int? = Int(minLengthValueSize)
+                    var intMinLengthValueSize:Int = Int(minLengthValueSize)!
                     // get value entered in second text box.
                     if var maxLengthValueSize = self.maximumWordSizeTB.text{
                         // make sure they didn't leave the textbox empty
                         if maxLengthValueSize.count != 0{
-                            var intMaxLengthValueSize: Int? = Int(maxLengthValueSize)
-                            
-                            // create the struct for the main Game view controllers function.
-                            let toGameData = settingsArg(minLength: intMinLengthValueSize!, maxLength: intMaxLengthValueSize!)
-                            self.functionToUpdateMainGamesData? (toGameData)
-                            self.navigationController?.popViewController(animated: true)
-                            
+                            var intMaxLengthValueSize: Int = Int(maxLengthValueSize)!
+                            // ensure the input values are within the allowed word bounds
+                            if (2 < intMaxLengthValueSize && intMaxLengthValueSize <= 7) && (intMinLengthValueSize >= 3 && intMinLengthValueSize <= 7) {
+                                // create the struct for the main Game view controllers function.
+                                let toGameData = settingsArg(minLength: intMinLengthValueSize, maxLength: intMaxLengthValueSize)
+                                self.functionToUpdateMainGamesData? (toGameData)
+                                self.navigationController?.popViewController(animated: true)
+                            } else {
+                                vm.snackMessage.value = "sizes must be within the bounds 3 - 7"
+                            }
                         }
                     }
                 }
