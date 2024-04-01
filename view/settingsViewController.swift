@@ -51,7 +51,7 @@ class settingsViewController: UIViewController {
 
         // update the textboxes to initially show the current passed in
         // min and max word length
-        if let minLengthValueSize = self.passedData?.maxLength{
+        if let minLengthValueSize = self.passedData?.minLength{
             self.minimumWordSizeTB.text = String(minLengthValueSize)
 
         }
@@ -74,6 +74,7 @@ class settingsViewController: UIViewController {
                     let toGameData = settingsArg(minLength: intMinLengthValueSize!, maxLength: intMaxLengthValueSize!)
                 }
             }
+        }
         
 //        if let text = textField.text {
 //            // text is a non-optional string here
