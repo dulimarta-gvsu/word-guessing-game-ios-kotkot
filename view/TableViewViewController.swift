@@ -20,6 +20,7 @@ class TableViewViewController: UIViewController {
         
         self.myTab.register(UINib(nibName: "cellForTableViewTableViewCell", bundle: nil), forCellReuseIdentifier: "cat")
         self.myTab.dataSource = self
+        self.myTab.delegate = self
     }
 
 
@@ -48,4 +49,11 @@ extension TableViewViewController: UITableViewDataSource {
     }
     
     
+}
+
+// to implement on click listener
+extension TableViewViewController: UITableViewDelegate{
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("Row \(indexPath.row) was clicked")
+    }
 }
