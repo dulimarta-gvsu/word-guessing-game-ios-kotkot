@@ -60,5 +60,7 @@ extension TableViewViewController: UITableViewDataSource {
 extension TableViewViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("Row \(indexPath.row) was clicked")
+//        tableView.reloadData() is same as .notifyDataSetChanged() in Kotlin
     }
+    
 }
