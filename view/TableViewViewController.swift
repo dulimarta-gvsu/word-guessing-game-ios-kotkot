@@ -19,6 +19,7 @@ class TableViewViewController: UIViewController {
         self.myTab = self.view.viewWithTag(23) as? UITableView
         
         self.myTab.register(UINib(nibName: "cellForTableViewTableViewCell", bundle: nil), forCellReuseIdentifier: "cat")
+        //
         self.myTab.dataSource = self
         self.myTab.delegate = self
     }
@@ -45,6 +46,10 @@ extension TableViewViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cat", for: indexPath)
         let whichOne = self.cities[indexPath.row]
         cell.textLabel?.text = "this is a test, city: \(whichOne)"
+        // if you want to change the detail label you would do
+        // After changing the layout so a detailed text is there.
+        // Check IOS TableView from professors Github
+        cell.detailTextLabel?.text = "Changing the detail label \(indexPath.row)"
         return cell
     }
     
