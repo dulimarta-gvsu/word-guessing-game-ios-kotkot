@@ -13,7 +13,7 @@ class settingsViewModel{
     let snackMessage = LiveData("")
     
     func isValidMinLength(minVal: Int) -> Bool{
-        var validMinLength = (self.minValue <= minVal) && (minVal <= self.maxValue)
+        let validMinLength = (self.minValue <= minVal) && (minVal <= self.maxValue)
         if !validMinLength{
             snackMessage.value = "Minimum length must be between 1 - 7"
         }
@@ -21,7 +21,7 @@ class settingsViewModel{
     }
     
     func isValidMaxLength(maxVal: Int) -> Bool{
-        var validMaxLength = (self.minValue <= maxVal) && (maxVal <= self.maxValue)
+        let validMaxLength = (self.minValue <= maxVal) && (maxVal <= self.maxValue)
         if !validMaxLength{
             snackMessage.value = "Maximum length must be between 1 - 7"
         }

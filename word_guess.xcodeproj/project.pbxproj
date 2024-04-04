@@ -27,6 +27,7 @@
 		995894BA2BBCA67600AE4CEB /* TableViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 995894B82BBCA67600AE4CEB /* TableViewViewController.xib */; };
 		995894BD2BBCA75400AE4CEB /* cellForTableViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995894BB2BBCA75400AE4CEB /* cellForTableViewTableViewCell.swift */; };
 		995894BE2BBCA75400AE4CEB /* cellForTableViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 995894BC2BBCA75400AE4CEB /* cellForTableViewTableViewCell.xib */; };
+		995894C02BBF3FF700AE4CEB /* wordGuessData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995894BF2BBF3FF700AE4CEB /* wordGuessData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		995894B82BBCA67600AE4CEB /* TableViewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewViewController.xib; sourceTree = "<group>"; };
 		995894BB2BBCA75400AE4CEB /* cellForTableViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cellForTableViewTableViewCell.swift; sourceTree = "<group>"; };
 		995894BC2BBCA75400AE4CEB /* cellForTableViewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = cellForTableViewTableViewCell.xib; sourceTree = "<group>"; };
+		995894BF2BBF3FF700AE4CEB /* wordGuessData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wordGuessData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 			children = (
 				156650672BAC871400A56EB4 /* readme_m.swift */,
 				995894B52BB9F97F00AE4CEB /* settingsArgs.swift */,
+				995894BF2BBF3FF700AE4CEB /* wordGuessData.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 				995894B12BB9CEC200AE4CEB /* settingsViewController.swift in Sources */,
 				995894B42BB9F41100AE4CEB /* settingsViewModel.swift in Sources */,
 				156650682BAC871400A56EB4 /* readme_m.swift in Sources */,
+				995894C02BBF3FF700AE4CEB /* wordGuessData.swift in Sources */,
 				995894B62BB9F97F00AE4CEB /* settingsArgs.swift in Sources */,
 				1566505C2BAC6CD300A56EB4 /* MainViewController.swift in Sources */,
 				995894BD2BBCA75400AE4CEB /* cellForTableViewTableViewCell.swift in Sources */,
