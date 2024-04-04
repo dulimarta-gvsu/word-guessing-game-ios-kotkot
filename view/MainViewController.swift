@@ -67,7 +67,7 @@ class MainViewController: UIViewController {
         VM.$incorrectCounter
             .receive(on: DispatchQueue.main)
             .sink { val in
-                self.incorrectScore.text = "Inorrect: \(val)"}
+                self.incorrectScore.text = "Incorrect: \(val)"}
             .store(in: &pool)
         
         VM.$guessNow
