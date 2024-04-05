@@ -11,6 +11,18 @@ class TableViewViewController: UIViewController {
     
     private let cities = ["Ada", "Lansing", "allendale", "Grandville"]
     private var myTab: UITableView!
+    var passedData: Array<wordGuessData>?
+    
+    init(words: Array<wordGuessData>){
+        super.init(nibName: nil, bundle: nil)
+        self.passedData = words
+    }
+    
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
