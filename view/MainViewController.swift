@@ -117,6 +117,9 @@ class MainViewController: UIViewController {
         // else if neither bound was changed than the previous used word
         // should still be valid and work.
         
+    func viewScoreboard(){
+        
+    }
     
     
 

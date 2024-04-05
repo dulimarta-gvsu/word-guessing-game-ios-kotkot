@@ -42,6 +42,10 @@ class MainViewViewModel{
     @Published var higher = 7
     @Published var errorMessage = ""
     
+    var allGuessedWords: Array<wordGuessData> = []
+    var beginWordTime: Double
+    var endWordTime: Double
+    
     func nowClearWord() {
         clearWord = ""
     }
@@ -68,6 +72,7 @@ class MainViewViewModel{
             shuffledWord.shuffle()
         }
         guessNow = String(shuffledWord)
+        self.beginWordTime = Date().timeIntervalSince1970
     }
     
     func checkAnswer(guess: String) {
@@ -76,6 +81,8 @@ class MainViewViewModel{
             pickWord()
             nowClearWord()
             tries = 0
+            self.endWordTime = Date().timeIntervalSince1970
+            // need to create struct and add it to our words guessed array and also create function to create and assign the masked word to this struct within this viewModel file
             errorMessage = "Good Job! Try this next word"
         } else if (guess.uppercased() != normalWord && tries != 2) {
             addTry()
