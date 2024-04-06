@@ -43,8 +43,8 @@ class MainViewViewModel{
     @Published var errorMessage = ""
     
     var allGuessedWords: Array<wordGuessData> = []
-    var beginWordTime: Double
-    var endWordTime: Double
+    var beginWordTime: Double = 0.0
+    var endWordTime: Double = 0.0
     
     func nowClearWord() {
         clearWord = ""
@@ -77,17 +77,27 @@ class MainViewViewModel{
     
     func checkAnswer(guess: String) {
         if (guess.uppercased() == normalWord){
+//            word was successfully guessed:
+            self.endWordTime = Date().timeIntervalSince1970
+            let wordToAdd = wordGuessData(successfullyGuessedOrNot: true, actualWord: self.normalWord, secretWord: generateMaskedWord(guess: self.normalWord), displayActualWord: false)
+            // add this guessedWord to our guessed words array
+            self.allGuessedWords.append(wordToAdd)
             addCor()
             pickWord()
             nowClearWord()
             tries = 0
-            self.endWordTime = Date().timeIntervalSince1970
             // need to create struct and add it to our words guessed array and also create function to create and assign the masked word to this struct within this viewModel file
             errorMessage = "Good Job! Try this next word"
         } else if (guess.uppercased() != normalWord && tries != 2) {
             addTry()
             errorMessage = "Attempt \(tries) incorrect. Try again"
         } else if (guess.uppercased() != normalWord && tries == 2) {
+            // User incorrectly guessed the word too many times.
+            // generate the struct and it's data we will put into our guessedWords array.
+            self.endWordTime = Date().timeIntervalSince1970
+            let wordToAdd = wordGuessData(successfullyGuessedOrNot: false, actualWord: self.normalWord, secretWord: generateMaskedWord(guess: self.normalWord), displayActualWord: false)
+            // add this guessedWord to our guessed words array
+            self.allGuessedWords.append(wordToAdd)
             addInc()
             pickWord()
             nowClearWord()
@@ -96,5 +106,20 @@ class MainViewViewModel{
         }
     }
     
+    func generateMaskedWord(guess: String) -> String {
+        var maskedWord = ""
+        for _ in 0..<guess.count {
+            maskedWord += "*"
+        }
+        return maskedWord
+    }
+
     
 }
+
+
+
+
+
+
+
