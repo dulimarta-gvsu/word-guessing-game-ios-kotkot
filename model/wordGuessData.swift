@@ -10,8 +10,10 @@ import Foundation
 struct wordGuessData{
     var successfullyGuessedOrNot: Bool
     var actualWord: String
-    var secretWord: String
+    var maskedWord: String
     var displayActualWord: Bool
+    var scrambledWord: String
+    var timeToGuessWord: Double
     
 }
 

@@ -79,7 +79,7 @@ class MainViewViewModel{
         if (guess.uppercased() == normalWord){
 //            word was successfully guessed:
             self.endWordTime = Date().timeIntervalSince1970
-            let wordToAdd = wordGuessData(successfullyGuessedOrNot: true, actualWord: self.normalWord, secretWord: generateMaskedWord(guess: self.normalWord), displayActualWord: false)
+            let wordToAdd = wordGuessData(successfullyGuessedOrNot: true, actualWord: self.normalWord, maskedWord: generateMaskedWord(guess: self.normalWord), displayActualWord: false, scrambledWord: String(self.shuffledWord), timeToGuessWord: calculateTimeToGuessWord())
             // add this guessedWord to our guessed words array
             self.allGuessedWords.append(wordToAdd)
             addCor()
@@ -94,7 +94,7 @@ class MainViewViewModel{
             // User incorrectly guessed the word too many times.
             // generate the struct and it's data we will put into our guessedWords array.
             self.endWordTime = Date().timeIntervalSince1970
-            let wordToAdd = wordGuessData(successfullyGuessedOrNot: false, actualWord: self.normalWord, secretWord: generateMaskedWord(guess: self.normalWord), displayActualWord: false)
+            let wordToAdd = wordGuessData(successfullyGuessedOrNot: false, actualWord: self.normalWord, maskedWord: generateMaskedWord(guess: self.normalWord), displayActualWord: false, scrambledWord: String(self.shuffledWord), timeToGuessWord: calculateTimeToGuessWord())
             // add this guessedWord to our guessed words array
             self.allGuessedWords.append(wordToAdd)
             addInc()
@@ -111,6 +111,10 @@ class MainViewViewModel{
             maskedWord += "*"
         }
         return maskedWord
+    }
+    
+    func calculateTimeToGuessWord() -> Double{
+        self.endWordTime - self.beginWordTime
     }
 
     

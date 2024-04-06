@@ -62,12 +62,12 @@ extension TableViewViewController: UITableViewDataSource {
      */
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "wordInfo", for: indexPath)
-        let whichOne = self.cities[indexPath.row]
-        cell.textLabel?.text = "this is a test, city: \(whichOne)"
+        let whichOne = self.allWordsGuessed![indexPath.row]
+        cell.textLabel?.text = whichOne.scrambledWord + " " + whichOne.maskedWord
         // if you want to change the detail label you would do
         // After changing the layout so a detailed text is there.
         // Check IOS TableView from professors Github
-        cell.detailTextLabel?.text = "Changing the detail label \(indexPath.row)"
+        cell.detailTextLabel?.text = "\(self.allWordsGuessed![indexPath.row].timeToGuessWord) seconds"
         return cell
     }
     
