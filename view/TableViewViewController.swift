@@ -11,11 +11,11 @@ class TableViewViewController: UIViewController {
     
     private let cities = ["Ada", "Lansing", "allendale", "Grandville"]
     private var myTab: UITableView!
-    var passedData: Array<wordGuessData>?
+    var allWordsGuessed: Array<wordGuessData>?
     
     init(words: Array<wordGuessData>){
         super.init(nibName: nil, bundle: nil)
-        self.passedData = words
+        self.allWordsGuessed = words
     }
     
     

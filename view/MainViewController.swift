@@ -16,6 +16,7 @@ class MainViewController: UIViewController {
     var checkButton: UIButton!
     var scrambledWordText: UILabel!
     var userInputTextField: UITextField!
+    var scoreboardButton: UIButton!
     
     let VM = MainViewViewModel()
     var pool: Set<AnyCancellable> = []
@@ -28,7 +29,8 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         // Change the background color to your preference
         self.view.backgroundColor = .orange
-        /*
+        
+        /**
          Declare widgets
          */
         // correctCount Text
@@ -52,9 +54,9 @@ class MainViewController: UIViewController {
         let settingsButton = view.viewWithTag(41) as? UIButton
         settingsButton?.addTarget(self, action: #selector(toSettings), for: UIControl.Event.touchUpInside)
         
-        /*
-         Need to create function to make settings button work and the associated variables for data transfer for settings screen to work properly.
-         */
+        // Scorboard Button
+        scoreboardButton = view.viewWithTag(50) as? UIButton
+        scoreboardButton?.addTarget(self, action: #selector(viewScoreboard), for: UIControl.Event.touchUpInside)
         // Do any additional setup after loading the view.
         
         
@@ -117,8 +119,15 @@ class MainViewController: UIViewController {
         // else if neither bound was changed than the previous used word
         // should still be valid and work.
         
-    func viewScoreboard(){
-        
+    @objc func viewScoreboard(){
+        /**
+         function to launch the Soreboard screen.
+         */
+        // Create our scorboard clas instantiation
+        let scoreboardInstantiation = TableViewViewController(words: VM.allGuessedWords)
+        // now push the view controller onto the view controller stack
+        // (launching the activity and adding it to the activit stack)
+        self.navigationController?.pushViewController(scoreboardInstantiation, animated: true)
     }
     
     

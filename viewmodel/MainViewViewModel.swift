@@ -86,7 +86,6 @@ class MainViewViewModel{
             pickWord()
             nowClearWord()
             tries = 0
-            // need to create struct and add it to our words guessed array and also create function to create and assign the masked word to this struct within this viewModel file
             errorMessage = "Good Job! Try this next word"
         } else if (guess.uppercased() != normalWord && tries != 2) {
             addTry()
