@@ -70,15 +70,15 @@ class settingsViewController: UIViewController {
         // create return to game function
     @objc func returnToGame(){
             // get the values entered in the 2 textboxes
-            if var minLengthValueSize = self.minimumWordSizeTB.text{
+        if let minLengthValueSize = self.minimumWordSizeTB.text{
                 // make sure they didn't leave the textboxes empty
                 if minLengthValueSize.count != 0{
-                    var intMinLengthValueSize:Int = Int(minLengthValueSize)!
+                    let intMinLengthValueSize:Int = Int(minLengthValueSize)!
                     // get value entered in second text box.
-                    if var maxLengthValueSize = self.maximumWordSizeTB.text{
+                    if let maxLengthValueSize = self.maximumWordSizeTB.text{
                         // make sure they didn't leave the textbox empty
                         if maxLengthValueSize.count != 0{
-                            var intMaxLengthValueSize: Int = Int(maxLengthValueSize)!
+                            let intMaxLengthValueSize: Int = Int(maxLengthValueSize)!
                             // ensure the input values are within the allowed word bounds
                             if (2 < intMaxLengthValueSize && intMaxLengthValueSize <= 7) && (intMinLengthValueSize >= 3 && intMinLengthValueSize <= 7) {
                                 // create the struct for the main Game view controllers function.

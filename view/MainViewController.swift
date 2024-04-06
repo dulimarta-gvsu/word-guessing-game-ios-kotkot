@@ -123,11 +123,17 @@ class MainViewController: UIViewController {
         /**
          function to launch the Soreboard screen.
          */
-        // Create our scorboard clas instantiation
-        let scoreboardInstantiation = TableViewViewController(words: VM.allGuessedWords)
-        // now push the view controller onto the view controller stack
-        // (launching the activity and adding it to the activit stack)
-        self.navigationController?.pushViewController(scoreboardInstantiation, animated: true)
+        // User should only be allowed to go to the scoreboard if they've guessed something already
+        if VM.allGuessedWords.count > 0{
+            // Create our scorboard clas instantiation
+            let scoreboardInstantiation = TableViewViewController(words: VM.allGuessedWords)
+            // now push the view controller onto the view controller stack
+            // (launching the activity and adding it to the activit stack)
+            self.navigationController?.pushViewController(scoreboardInstantiation, animated: true)
+        }
+        // UX debt: It would make sense to make a snackbar that displays to the user telling them
+        // they can't access the scoreboard screen until they have guessed at least 1 word
+        // (correctly or incorrectly)
     }
     
     

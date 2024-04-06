@@ -30,7 +30,7 @@ class TableViewViewController: UIViewController {
         // Do any additional setup after loading the view.
         self.myTab = self.view.viewWithTag(23) as? UITableView
         
-        self.myTab.register(UINib(nibName: "cellForTableViewTableViewCell", bundle: nil), forCellReuseIdentifier: "cat")
+        self.myTab.register(UINib(nibName: "cellForTableViewTableViewCell", bundle: nil), forCellReuseIdentifier: "wordInfo")
         //
         self.myTab.dataSource = self
         self.myTab.delegate = self
@@ -51,11 +51,17 @@ class TableViewViewController: UIViewController {
 
 extension TableViewViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.cities.count
+        // since we require user to have guessed at least 1 word for the view scoreboard button to
+        // work we can just force unwrap allWordsGuessed variable. We know it won't be nil.
+        return self.allWordsGuessed!.count
+//        return cities.count
     }
     
+    /**
+     Next steps are to change texts of the TableViewUI using the functions below
+     */
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cat", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "wordInfo", for: indexPath)
         let whichOne = self.cities[indexPath.row]
         cell.textLabel?.text = "this is a test, city: \(whichOne)"
         // if you want to change the detail label you would do
