@@ -90,20 +90,18 @@ extension TableViewViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("Row \(indexPath.row) was clicked")
         let selectedRow = indexPath.row
-        // If we haven't selected any words so far, we should be able to just set the displayActualWWord variable to true so the actual word will be displayed
         if numWordsUnhidden == 0{
             numWordsUnhidden += 1
             self.allWordsGuessed![selectedRow].displayActualWord = true
-        } else{
-            
+        } else {
+            if selectedRow == previousIndexTapped{
+                numWordsUnhidden -= 1
+                self.allWordsGuessed![selectedRow].displayActualWord = false
+            } else{
+                self.allWordsGuessed![previousIndexTapped].displayActualWord = false
+                self.allWordsGuessed![selectedRow].displayActualWord = true
+            }
         }
-        self.previousIndexTapped = indexPath.row
-        tableView.reloadData()
-/**
- Going to change the stuff below as it almost works but doesn't do everything we need because when we tap the same word over and over, it should hide and rehide, which below didn't.
- */
-        self.allWordsGuessed![self.previousIndexTapped].displayActualWord = false
-        self.allWordsGuessed![indexPath.row].displayActualWord = true
         self.previousIndexTapped = indexPath.row
         tableView.reloadData()
 //        tableView.reloadData() is same as .notifyDataSetChanged() in Kotlin
