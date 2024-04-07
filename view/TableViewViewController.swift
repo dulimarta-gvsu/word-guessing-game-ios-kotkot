@@ -61,13 +61,22 @@ extension TableViewViewController: UITableViewDataSource {
      Next steps are to change texts of the TableViewUI using the functions below
      */
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var textForTextBox: String
         let cell = tableView.dequeueReusableCell(withIdentifier: "wordInfo", for: indexPath)
         let whichOne = self.allWordsGuessed![indexPath.row]
-        cell.textLabel?.text = whichOne.scrambledWord + " " + whichOne.maskedWord
+        // if the user selected this box then displayActualWord should be true so we will want this cell to displa the actual word
+        if whichOne.displayActualWord{
+            textForTextBox = whichOne.actualWord
+        }
+        else{
+            // else user didn't click on this one so we should instead display the masked word.
+            textForTextBox = whichOne.maskedWord
+        }
+        cell.textLabel?.text = whichOne.scrambledWord + " " + textForTextBox
         // if you want to change the detail label you would do
         // After changing the layout so a detailed text is there.
         // Check IOS TableView from professors Github
-        cell.detailTextLabel?.text = "\(self.allWordsGuessed![indexPath.row].timeToGuessWord) seconds"
+        cell.detailTextLabel?.text = "\(whichOne.timeToGuessWord) seconds"
         return cell
     }
     
@@ -78,6 +87,8 @@ extension TableViewViewController: UITableViewDataSource {
 extension TableViewViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("Row \(indexPath.row) was clicked")
+        self.allWordsGuessed?[indexPath.row].displayActualWord = true
+        tableView.reloadData()
 //        tableView.reloadData() is same as .notifyDataSetChanged() in Kotlin
     }
     
