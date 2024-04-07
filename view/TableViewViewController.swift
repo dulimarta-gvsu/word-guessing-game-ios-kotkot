@@ -37,6 +37,17 @@ class TableViewViewController: UIViewController {
         self.myTab.dataSource = self
         self.myTab.delegate = self
     }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let currentCell = self.allWordsGuessed![indexPath.row]
+        // if the user correctly guessed the word, make the cell color green
+        if currentCell.successfullyGuessedOrNot{
+            cell.backgroundColor = UIColor.green
+        } else {
+            cell.backgroundColor = UIColor.red
+            
+        }
+    }
 
 
     /*
@@ -98,6 +109,8 @@ extension TableViewViewController: UITableViewDelegate{
                 numWordsUnhidden -= 1
                 self.allWordsGuessed![selectedRow].displayActualWord = false
             } else{
+                // below assumes we are tapping on a different word than previosuly tapped so the numWordsUnhidden
+                // won't change because we are hiding 1 word and revealing 1 word.
                 self.allWordsGuessed![previousIndexTapped].displayActualWord = false
                 self.allWordsGuessed![selectedRow].displayActualWord = true
             }
@@ -106,5 +119,6 @@ extension TableViewViewController: UITableViewDelegate{
         tableView.reloadData()
 //        tableView.reloadData() is same as .notifyDataSetChanged() in Kotlin
     }
+    
     
 }

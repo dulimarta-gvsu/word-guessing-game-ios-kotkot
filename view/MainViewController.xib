@@ -18,7 +18,7 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <userGuides>
-                <userLayoutGuide location="340" affinity="maxX"/>
+                <userLayoutGuide location="336" affinity="maxX"/>
             </userGuides>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alec Mirambeau &amp; Jacob Davis" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ouf-zp-3Uk">
@@ -104,7 +104,7 @@
                 <constraint firstItem="qEa-mX-epK" firstAttribute="centerY" secondItem="fBb-y4-s2d" secondAttribute="centerY" id="uXc-4d-DRw"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="qEa-mX-epK" secondAttribute="trailing" constant="399" id="vE3-5t-uet"/>
                 <constraint firstItem="fBb-y4-s2d" firstAttribute="top" secondItem="ouf-zp-3Uk" secondAttribute="bottom" constant="35" id="xHI-3K-eKv"/>
-                <constraint firstItem="qcA-57-Jgm" firstAttribute="top" secondItem="UsH-Tl-AvP" secondAttribute="bottom" constant="24.666666666666686" id="zNd-Aw-bbv"/>
+                <constraint firstItem="qcA-57-Jgm" firstAttribute="top" secondItem="UsH-Tl-AvP" secondAttribute="bottom" constant="24.670000000000002" id="zNd-Aw-bbv"/>
             </constraints>
             <variation key="default">
                 <mask key="constraints">
