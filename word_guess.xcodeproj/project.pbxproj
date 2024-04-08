@@ -28,6 +28,7 @@
 		995894BD2BBCA75400AE4CEB /* cellForTableViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995894BB2BBCA75400AE4CEB /* cellForTableViewTableViewCell.swift */; };
 		995894BE2BBCA75400AE4CEB /* cellForTableViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 995894BC2BBCA75400AE4CEB /* cellForTableViewTableViewCell.xib */; };
 		995894C02BBF3FF700AE4CEB /* wordGuessData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995894BF2BBF3FF700AE4CEB /* wordGuessData.swift */; };
+		995894ED2BC48C4C00AE4CEB /* tableViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995894EC2BC48C4C00AE4CEB /* tableViewViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		995894BB2BBCA75400AE4CEB /* cellForTableViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cellForTableViewTableViewCell.swift; sourceTree = "<group>"; };
 		995894BC2BBCA75400AE4CEB /* cellForTableViewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = cellForTableViewTableViewCell.xib; sourceTree = "<group>"; };
 		995894BF2BBF3FF700AE4CEB /* wordGuessData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wordGuessData.swift; sourceTree = "<group>"; };
+		995894EC2BC48C4C00AE4CEB /* tableViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = tableViewViewModel.swift; path = viewmodel/tableViewViewModel.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 			children = (
 				156650632BAC86A600A56EB4 /* readme_vm.swift */,
 				995894AD2BB86A5000AE4CEB /* MainViewViewModel.swift */,
+				995894EC2BC48C4C00AE4CEB /* tableViewViewModel.swift */,
 				995894B32BB9F41100AE4CEB /* settingsViewModel.swift */,
 			);
 			path = viewmodel;
@@ -226,6 +229,7 @@
 				995894AC2BB8690700AE4CEB /* LiveData.swift in Sources */,
 				156650662BAC86E000A56EB4 /* readme_v.swift in Sources */,
 				995894B12BB9CEC200AE4CEB /* settingsViewController.swift in Sources */,
+				995894ED2BC48C4C00AE4CEB /* tableViewViewModel.swift in Sources */,
 				995894B42BB9F41100AE4CEB /* settingsViewModel.swift in Sources */,
 				156650682BAC871400A56EB4 /* readme_m.swift in Sources */,
 				995894C02BBF3FF700AE4CEB /* wordGuessData.swift in Sources */,

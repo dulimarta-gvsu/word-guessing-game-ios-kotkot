@@ -14,10 +14,11 @@ class TableViewViewController: UIViewController {
     var allWordsGuessed: Array<wordGuessData>?
     private var previousIndexTapped: Int = 0
     private var numWordsUnhidden: Int = 0
+    private var vm: tableViewViewModel?
     
-    init(words: Array<wordGuessData>){
+    init(wordsPassed: Array<wordGuessData>){
         super.init(nibName: nil, bundle: nil)
-        self.allWordsGuessed = words
+        self.vm = tableViewViewModel(words: wordsPassed)
     }
     
     
@@ -39,9 +40,9 @@ class TableViewViewController: UIViewController {
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        let currentCell = self.allWordsGuessed![indexPath.row]
+        let currentCell = self.vm?.allWordsGuessed![indexPath.row]
         // if the user correctly guessed the word, make the cell color green
-        if currentCell.successfullyGuessedOrNot{
+        if ((currentCell!.successfullyGuessedOrNot)){
             cell.backgroundColor = UIColor.green
         } else {
             cell.backgroundColor = UIColor.red
@@ -66,7 +67,7 @@ extension TableViewViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // since we require user to have guessed at least 1 word for the view scoreboard button to
         // work we can just force unwrap allWordsGuessed variable. We know it won't be nil.
-        return self.allWordsGuessed!.count
+        return (self.vm?.allWordsGuessed!.count)!
 //        return cities.count
     }
     
@@ -76,7 +77,7 @@ extension TableViewViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var textForTextBox: String
         let cell = tableView.dequeueReusableCell(withIdentifier: "wordInfo", for: indexPath)
-        let whichOne = self.allWordsGuessed![indexPath.row]
+        let whichOne = self.vm!.allWordsGuessed![indexPath.row]
         // if the user selected this box then displayActualWord should be true so we will want this cell to displa the actual word
         if whichOne.displayActualWord{
             textForTextBox = whichOne.actualWord
@@ -103,16 +104,16 @@ extension TableViewViewController: UITableViewDelegate{
         let selectedRow = indexPath.row
         if numWordsUnhidden == 0{
             numWordsUnhidden += 1
-            self.allWordsGuessed![selectedRow].displayActualWord = true
+            self.vm?.allWordsGuessed![selectedRow].displayActualWord = true
         } else {
             if selectedRow == previousIndexTapped{
                 numWordsUnhidden -= 1
-                self.allWordsGuessed![selectedRow].displayActualWord = false
+                self.vm?.allWordsGuessed![selectedRow].displayActualWord = false
             } else{
                 // below assumes we are tapping on a different word than previosuly tapped so the numWordsUnhidden
                 // won't change because we are hiding 1 word and revealing 1 word.
-                self.allWordsGuessed![previousIndexTapped].displayActualWord = false
-                self.allWordsGuessed![selectedRow].displayActualWord = true
+                self.vm?.allWordsGuessed![previousIndexTapped].displayActualWord = false
+                self.vm?.allWordsGuessed![selectedRow].displayActualWord = true
             }
         }
         self.previousIndexTapped = indexPath.row

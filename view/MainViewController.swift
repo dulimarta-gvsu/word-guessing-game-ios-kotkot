@@ -126,7 +126,7 @@ class MainViewController: UIViewController {
         // User should only be allowed to go to the scoreboard if they've guessed something already
         if VM.allGuessedWords.count > 0{
             // Create our scorboard clas instantiation
-            let scoreboardInstantiation = TableViewViewController(words: VM.allGuessedWords)
+            let scoreboardInstantiation = TableViewViewController(wordsPassed: VM.allGuessedWords)
             // now push the view controller onto the view controller stack
             // (launching the activity and adding it to the activit stack)
             self.navigationController?.pushViewController(scoreboardInstantiation, animated: true)
