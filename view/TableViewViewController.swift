@@ -10,6 +10,7 @@ import UIKit
 class TableViewViewController: UIViewController {
     
     private var sortByWordLengthButton: UIButton!
+    private var sortByTimeToGuessButton: UIButton!
     private let cities = ["Ada", "Lansing", "allendale", "Grandville"]
     private var myTab: UITableView!
     var allWordsGuessed: Array<wordGuessData>?
@@ -41,6 +42,9 @@ class TableViewViewController: UIViewController {
         self.sortByWordLengthButton = view.viewWithTag(2) as? UIButton
         self.sortByWordLengthButton.addTarget(self, action: #selector(sortByWordLength), for: UIControl.Event.touchUpInside)
         
+        self.sortByTimeToGuessButton = view.viewWithTag(1) as? UIButton
+        self.sortByTimeToGuessButton.addTarget(self, action: #selector(sortByTimeToGuessWord), for: UIControl.Event.touchUpInside)
+        
         
         
 //        checkButton.addTarget(self, action: #selector(checkMyAnswer), for: UIControl.Event.touchUpInside)
@@ -61,6 +65,11 @@ class TableViewViewController: UIViewController {
     @objc func sortByWordLength(){
         vm?.sortByWordLength()
         // how do we notify the table that the data set has been changed (sorted into a different order)
+        self.myTab.reloadData()
+    }
+    
+    @objc func sortByTimeToGuessWord(){
+        self.vm?.sortByTimeToGuess()
         self.myTab.reloadData()
     }
 
