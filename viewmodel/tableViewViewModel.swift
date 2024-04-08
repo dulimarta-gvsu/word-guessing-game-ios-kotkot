@@ -13,4 +13,8 @@ class tableViewViewModel{
         self.allWordsGuessed = words
     }
     
+    func sortByWordLength(){
+        self.allWordsGuessed?.sorted(by: {$0.actualWord.count < $1.actualWord.count})
+    }
+    
 }
