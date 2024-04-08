@@ -9,6 +9,7 @@ import UIKit
 
 class TableViewViewController: UIViewController {
     
+    private var sortByWordLengthButton: UIButton!
     private let cities = ["Ada", "Lansing", "allendale", "Grandville"]
     private var myTab: UITableView!
     var allWordsGuessed: Array<wordGuessData>?
@@ -37,6 +38,7 @@ class TableViewViewController: UIViewController {
         //
         self.myTab.dataSource = self
         self.myTab.delegate = self
+        self.sortByWordLengthButton = view.viewWithTag(2) as? UIButton
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
@@ -50,6 +52,7 @@ class TableViewViewController: UIViewController {
         }
     }
 
+    
 
     /*
     // MARK: - Navigation
