@@ -39,6 +39,12 @@ class TableViewViewController: UIViewController {
         self.myTab.dataSource = self
         self.myTab.delegate = self
         self.sortByWordLengthButton = view.viewWithTag(2) as? UIButton
+        self.sortByWordLengthButton.addTarget(self, action: #selector(sortByWordLength), for: UIControl.Event.touchUpInside)
+        
+        
+        
+//        checkButton.addTarget(self, action: #selector(checkMyAnswer), for: UIControl.Event.touchUpInside)
+
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
@@ -50,6 +56,12 @@ class TableViewViewController: UIViewController {
             cell.backgroundColor = UIColor.red
             
         }
+    }
+    
+    @objc func sortByWordLength(){
+        vm?.sortByWordLength()
+        // how do we notify the table that the data set has been changed (sorted into a different order)
+        self.myTab.reloadData()
     }
 
     

@@ -14,7 +14,11 @@ class tableViewViewModel{
     }
     
     func sortByWordLength(){
-        self.allWordsGuessed?.sorted(by: {$0.actualWord.count < $1.actualWord.count})
+        self.allWordsGuessed = self.allWordsGuessed?.sorted(by: {$0.actualWord.count < $1.actualWord.count})
+    }
+    
+    func sortByTimeToGuess(){
+        self.allWordsGuessed = self.allWordsGuessed?.sorted(by: {$0.timeToGuessWord < $1.timeToGuessWord})
     }
     
 }
