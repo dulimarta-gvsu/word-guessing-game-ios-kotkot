@@ -19,7 +19,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" tag="23" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ibD-MO-XSX">
-                    <rect key="frame" x="20" y="151.33333333333331" width="353" height="680.66666666666674"/>
+                    <rect key="frame" x="20" y="151.33333333333331" width="353" height="614.66666666666674"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
                 <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="DYf-PE-wQp">
@@ -43,6 +43,15 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" tag="50" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="78j-l0-bbL">
+                    <rect key="frame" x="145" y="783" width="103" height="34.333333333333371"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="filled">
+                        <attributedString key="attributedTitle">
+                            <fragment content="Back"/>
+                        </attributedString>
+                    </buttonConfiguration>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -52,9 +61,12 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ibD-MO-XSX" secondAttribute="trailing" constant="20" id="FQw-v8-1jX"/>
                 <constraint firstItem="Uoj-pA-bxV" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="18" id="GyS-3D-nLV"/>
                 <constraint firstItem="DYf-PE-wQp" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="11" id="WJ2-uN-8Ri"/>
-                <constraint firstItem="ibD-MO-XSX" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" constant="14" id="YeS-vC-qQG"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ibD-MO-XSX" secondAttribute="bottom" constant="52" id="aaj-fJ-TqI"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="78j-l0-bbL" secondAttribute="trailing" constant="145" id="bxV-S0-Ov3"/>
                 <constraint firstItem="DYf-PE-wQp" firstAttribute="leading" secondItem="Uoj-pA-bxV" secondAttribute="trailing" constant="31" id="dMz-J9-4Pt"/>
                 <constraint firstItem="ibD-MO-XSX" firstAttribute="top" secondItem="Uoj-pA-bxV" secondAttribute="bottom" constant="54" id="krW-d3-2ar"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="78j-l0-bbL" secondAttribute="bottom" constant="0.66666666666662877" id="tZW-fH-LF3"/>
+                <constraint firstItem="78j-l0-bbL" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="145" id="ypG-he-Mn4"/>
             </constraints>
             <point key="canvasLocation" x="139.69465648854961" y="19.718309859154932"/>
         </view>

@@ -17,6 +17,7 @@ class TableViewViewController: UIViewController {
     private var previousIndexTapped: Int = 0
     private var numWordsUnhidden: Int = 0
     private var vm: tableViewViewModel?
+    var returnToGameButton: UIButton!
     
     init(wordsPassed: Array<wordGuessData>){
         super.init(nibName: nil, bundle: nil)
@@ -45,8 +46,9 @@ class TableViewViewController: UIViewController {
         self.sortByTimeToGuessButton = view.viewWithTag(1) as? UIButton
         self.sortByTimeToGuessButton.addTarget(self, action: #selector(sortByTimeToGuessWord), for: UIControl.Event.touchUpInside)
         
-        
-        
+        //setup return to game
+        returnToGameButton = view.viewWithTag(50) as? UIButton
+        returnToGameButton?.addTarget(self, action: #selector(returnToGame), for: UIControl.Event.touchUpInside)
 //        checkButton.addTarget(self, action: #selector(checkMyAnswer), for: UIControl.Event.touchUpInside)
 
     }
@@ -71,6 +73,10 @@ class TableViewViewController: UIViewController {
     @objc func sortByTimeToGuessWord(){
         self.vm?.sortByTimeToGuess()
         self.myTab.reloadData()
+    }
+    
+    @objc func returnToGame(){
+        self.navigationController?.popViewController(animated: true)
     }
 
     
